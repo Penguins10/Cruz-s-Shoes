@@ -1,0 +1,316 @@
+//Jerry Cruz
+//Shoe Seller
+//02-11-13
+
+
+//Used so user can enter information
+import java.util.Scanner;
+
+//main class necessary for program
+public class ShoeRetailers
+{
+	//Used in main class
+	public static void main(String[] args) {
+		
+		
+		//String variable
+		String ShoeType [] = {"Sandals", "Shoes", "Boots"};
+		
+		//arrays for different base prices for different people
+		double ChildrenPrice [] = {5,6,7};
+		double MenPrice [] = {7,8,9};
+		double WomenPrice [] = {6,7,8};
+		
+		//String variable and other variables that will be used later on
+		String ShoeChoice;
+		double ShoeSize;
+		double FinalPrice;		
+		double TotalPrice;
+		 double Tax;
+		
+		//Tax constant used later on
+		 Tax = .0875;
+		 
+		 //Used so user can enter information
+		Scanner input = new Scanner(System.in);
+		
+		
+		//Used to print out welcome message
+		System.out.println("Hello, welcome to Cruz's Shoes");
+		
+		//Used to make space
+		System.out.println();
+		
+		//Used to print out what user is looking for
+		System.out.println("Please, enter  1. for children; 2. for women; or 3. for men ");
+	
+		//initializer/null used throughout the whole program
+		int category=0;
+		
+		//Used so user can enter info in switch 
+		category = input.nextInt();
+		
+		
+		//Used to show the different options
+		switch(category) {
+		
+		
+		
+		case 1:
+			
+			//Prints out message
+			System.out.println("You have chosen children.");
+			
+			//Used to create space
+			System.out.println();
+			
+			int i;
+			
+			//Prints out message to question user about their shoe type
+			System.out.println("Select shoe type 1 = sandals ; 2 = shoes ; 3 = boots");
+			
+			//I is being used to hold the input value
+			i = input.nextInt();
+			
+			
+			//While loop used in case user enters an incorrect number
+			while (i <1 || i > 3) {
+				System.out.println("Please select a valid shoe type");
+				i = input.nextInt();
+				
+			 	
+			
+				
+			}
+			
+			//Used to calculate ShoeChoice
+			ShoeChoice = ("Children " + ShoeType[i-1] );
+			
+			//Prints out shoe choice
+			System.out.println("You have selected: " + ShoeType[i-1]);
+			
+			//Used to create space
+			System.out.println();
+			
+			//Prints out message
+			System.out.println("Please enter shoe size from 1-12");
+			
+			//Used so user can enter ShoeSize
+			ShoeSize = input.nextDouble();
+			
+			
+			//While loop used in case user enters an incorrect number
+			while (ShoeSize <1 || ShoeSize > 12) {
+				System.out.println("Please select a valid shoe size");
+				ShoeSize = input.nextDouble();
+				
+							 	
+			
+				
+			}
+			
+			//Prints out ShoeSize chosen
+			System.out.println("You have chosen: "  + ShoeSize);
+			
+			//Used to create space
+			System.out.println();
+			
+			//Used to calculate FinalPrice
+			FinalPrice = ChildrenPrice [i-1] + (ChildrenPrice[i-1] * (ShoeSize/10));
+			
+			//Used to print out the users choices
+			System.out.println(         "User Choices:"                     );
+			System.out.println("---------------------------------------------");
+			System.out.println("---------------------------------------------");
+			
+			System.out.println("You chose: " + ShoeChoice);
+			System.out.println();
+			System.out.println("You chose size: " + ShoeSize);
+			System.out.println();
+			System.out.println("Youre current price: " + FinalPrice);
+			
+			TotalPrice = FinalPrice + (FinalPrice * Tax);
+			
+			
+			System.out.println("---------------------------------------------");
+			System.out.println("---------------------------------------------");
+			System.out.println("---------------------------------------------");
+			
+			//Prints out final price including tax
+			System.out.println("Your final Price tax included is: $" + TotalPrice);
+		
+			
+			break;
+		
+		case 2:
+			
+			//Prints out message
+			System.out.println("You have chosen women.");
+			
+			//Used to create space
+			System.out.println();
+			
+			//Prints out message
+			System.out.println("Select shoe type 1 = sandals ; 2 = shoes ; 3 = boots");
+			
+			//Used so user can input information
+			i = input.nextInt();
+			
+			//While loop used in case user enters an invalid number
+			while (i <1 || i > 3) {
+				System.out.println("Please select a valid shoe type");
+				i = input.nextInt();
+				
+			 	
+			
+				
+			}
+			
+			//Used to hold ShoeChoice
+			ShoeChoice = ("Women " + ShoeType[i-1] );
+			
+			//Prints out user choice
+			System.out.println("You have selected: " + ShoeType[i-1]);
+			
+			//Used to create space
+			System.out.println();
+			
+			//Prints out message
+			System.out.println("Please enter shoe size from 1-12");
+			
+			//User can input ShoeSize number
+			ShoeSize = input.nextDouble();
+			
+			//While loop used in case user enters invalid value
+			while (ShoeSize <1 || ShoeSize > 12) {
+				System.out.println("Please select a valid shoe size");
+				ShoeSize = input.nextDouble();
+				
+							 	
+			
+				
+			}
+			
+			//Prints out user choice
+			System.out.println("You have chosen: "  + ShoeSize);
+			
+			//Used to create space
+			System.out.println();
+			
+			//Used to hold the value without tax
+			FinalPrice = WomenPrice [i-1] + (WomenPrice[i-1] * (ShoeSize/10));
+			
+			//Prints out user choices
+			System.out.println(         "User Choices:"                     );
+			System.out.println("---------------------------------------------");
+			System.out.println("---------------------------------------------");
+			
+			System.out.println("You chose: " + ShoeChoice);
+			System.out.println();
+			System.out.println("You chose size: " + ShoeSize);
+			System.out.println();
+			System.out.println("Youre current price: " + FinalPrice);
+			
+			TotalPrice = FinalPrice + (FinalPrice * Tax);
+			
+			
+			System.out.println("---------------------------------------------");
+			System.out.println("---------------------------------------------");
+			System.out.println("---------------------------------------------");
+			
+			//Used to print out final price with tax included
+			System.out.println("Your final Price tax included is: $" + TotalPrice);
+			
+			
+			break;
+			
+		case 3:
+			
+			//Prints out message
+			System.out.println("You have chosen men.");
+			
+			//Used to create space
+			System.out.println();
+			
+			//Prints out message
+			System.out.println("Select shoe type 1 = sandals ; 2 = shoes ; 3 = boots");
+			i = input.nextInt();
+			
+			//while loop used if user enters invalid value
+			while (i <1 || i > 3) {
+				System.out.println("Please select a valid shoe type");
+				i = input.nextInt();
+				
+			 	
+			
+				
+			}
+			
+			//Used to hold ShoeChoice value
+			ShoeChoice = ("Men " + ShoeType[i-1] );
+			
+			//prints out user choice
+			System.out.println("You have selected: " + ShoeType[i-1]);
+			
+			//Used to create space
+			System.out.println();
+			
+			//Prints out message
+			System.out.println("Please enter shoe size from 1-12");
+			
+			//Used so user can enter ShoeSize value
+			ShoeSize = input.nextDouble();
+			
+			//while loop used if user enters invalid choice
+			while (ShoeSize <1 || ShoeSize > 12) {
+				System.out.println("Please select a valid shoe size");
+				ShoeSize = input.nextDouble();
+				
+							 	
+			
+				
+			}
+			
+			//Prints out user choice
+			System.out.println("You have chosen: "  + ShoeSize);
+			
+			//Used to create space
+			System.out.println();
+			
+			//Used to hold final value without including tax
+			FinalPrice = MenPrice [i-1] + (MenPrice[i-1] * (ShoeSize/10));
+			
+			//Used to print out User Choices
+			System.out.println(         "User Choices:"                     );
+			System.out.println("---------------------------------------------");
+			System.out.println("---------------------------------------------");
+			
+			System.out.println("You chose: " + ShoeChoice);
+			System.out.println();
+			System.out.println("You chose size: " + ShoeSize);
+			System.out.println();
+			System.out.println("Youre current price: " + FinalPrice);
+			
+			TotalPrice = FinalPrice + (FinalPrice * Tax);
+			
+			
+			System.out.println("---------------------------------------------");
+			System.out.println("---------------------------------------------");
+			System.out.println("---------------------------------------------");
+			
+			//Prints out final price with tax included
+			System.out.println("Your final Price tax included is: $" + TotalPrice);
+			
+			
+			break;
+			
+		//default statement used if user enters an invalid choice
+		default:
+			System.out.println("Please, enter a valid choice of 1,2, or 3");
+			break;
+		
+}
+		
+			
+	}
+}
